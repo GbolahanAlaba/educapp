@@ -75,34 +75,54 @@ class Dashboard:
         help_menu.add_cascade(label='6. Account', menu=sub_help_menu)
         sub_help_menu.add_command(label='Create a new account')
 
+        Set_B = Button(window, text='Set up your application here', font=('roboto', 10, 'bold'), bd=0, fg='#D30E0E', bg='white', cursor='hand2')
+        Set_B.place(relx=0.5, y=20, anchor=N, width=300)
+
         #frame
         MF = Frame(window, width=950, height=500, bg='#e5dcda')
         MF.place(relx=0.5, y=120, anchor=N)
 
-        ADP = Button(MF, text='Admission\nPortal', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        img1 = PhotoImage(file='./Images/admicon.png')
+        img1.photo = img1
+        ADP = Button(MF, text='Admission\nPortal', image=img1, compound=TOP, font=('roboto', 15, 'bold'), bd=0, bg='white', fg='#D30E0E', cursor='hand2')
         ADP.place(x=45, y=30, width=200, height=200,)
 
-        SP = Button(MF, text='Student\nPortal', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        img2 = PhotoImage(file='./Images/sticon.png')
+        img2.photo = img2
+        SP = Button(MF, text='Student\nPortal', image=img2, compound=TOP, font=('roboto', 15, 'bold'), bd=0, bg='white', fg='#D30E0E', cursor='hand2')
         SP.place(x=265, y=30, width=200, height=200,)
 
-        TP = Button(MF, text='Teachers\nPortal', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        img3 = PhotoImage(file='./Images/teachericon.png')
+        img3.photo = img3
+        TP = Button(MF, text='Teachers\nPortal', image=img3, compound=TOP, font=('roboto', 15, 'bold'), bd=0, bg='white', fg='#D30E0E', cursor='hand2')
         TP.place(x=485, y=30, width=200, height=200,)
 
-        PP = Button(MF, text='Payment\nPortal', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        img4 = PhotoImage(file='./Images/payicon.png')
+        img4.photo = img4
+        PP = Button(MF, text='Payment\nPortal', image=img4, compound=TOP, font=('roboto', 15, 'bold'), bd=0, bg='white', fg='#D30E0E', cursor='hand2')
         PP.place(x=705, y=30, width=200, height=200,)
 
-        MR = Button(MF, text='Medical\nStatement', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        img5 = PhotoImage(file='./Images/medicon.png')
+        img5.photo = img5
+        MR = Button(MF, text='Medical\nStatement', image=img5, compound=TOP, font=('roboto', 15, 'bold'), bd=0, bg='white', fg='#D30E0E', cursor='hand2')
         MR.place(x=45, y=260, width=200, height=200,)
 
-        SC = Button(MF, text='School\nCalendar', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        img6 = PhotoImage(file='./Images/calicon.png')
+        img6.photo = img6
+        SC = Button(MF, text='School\nCalendar', image=img6, compound=TOP, font=('roboto', 15, 'bold'), bd=0, bg='white', fg='#D30E0E', cursor='hand2')
         SC.place(x=265, y=260, width=200, height=200,)
 
-        RC = Button(MF, text='Report\nCard', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        img7 = PhotoImage(file='./Images/repicon.png')
+        img7.photo = img7
+        RC = Button(MF, text='Report\nCard', image=img7, compound=TOP, font=('roboto', 15, 'bold'), bd=0, bg='white', fg='#D30E0E', cursor='hand2')
         RC.place(x=485, y=260, width=200, height=200,)
 
-        EC = Button(MF, text='Extra\nCurriculum', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        img8 = PhotoImage(file='./Images/exticon.png')
+        img8.photo = img8
+        EC = Button(MF, text='Extra\nCurriculum', image=img8, compound=TOP, font=('roboto', 15, 'bold'), bd=0, bg='white', fg='#D30E0E', cursor='hand2')
         EC.place(x=705, y=260, width=200, height=200,)
         
+
         
 
 
