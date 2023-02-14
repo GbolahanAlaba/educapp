@@ -1,0 +1,148 @@
+from tkinter import *
+from tkinter import messagebox
+from tkinter import Menu
+from PIL import ImageTk, Image
+
+
+
+class Dashboard:
+    def __init__(self, window):
+        self.window = window
+        self.window.wm_iconbitmap('Images/log.ico')
+        self.window.title('EducAPP-360')
+        sw = self.window.winfo_screenwidth()
+        sh = self.window.winfo_screenheight()
+        self.window.geometry(f'{sw}x{sh}')
+        # self.window.resizable(0,0)
+        self.window.state('zoomed')
+        # self.window.configure(bg="#357EC7")
+               
+
+
+
+        # Menu Bar
+        menubar = Menu(self.window)
+        self.window.config(menu=menubar)
+        # img = ImageTk.PhotoImage(Image.open("retail.ico"))
+
+
+        # Create menu
+        # File menu
+        file_menu = Menu(menubar, tearoff=0)
+        menubar.add_cascade(label='File', menu=file_menu)
+        file_menu.add_command(label='Print')
+        file_menu.add_command(label='Export')
+        file_menu.add_separator()
+
+        sub_file_menu = Menu(file_menu, tearoff=0)
+        file_menu.add_cascade(label='Layout', menu=sub_file_menu)
+        sub_file_menu.add_command(label='Add or remove columns')
+        sub_file_menu.add_command(label='Save')
+        sub_file_menu.add_separator()
+        sub_file_menu.add_command(label='Restore default layout')
+
+        file_menu.add_separator()
+        file_menu.add_command(label='Log Out')
+        file_menu.add_separator()
+        file_menu.add_command(label='Quit', command=self.window.destroy)
+
+        # Show menu
+        show_menu = Menu(menubar, tearoff=0)
+        menubar.add_cascade(label='Show', menu=show_menu)
+        show_menu.add_command(label='Sales')
+        show_menu.add_command(label='Quotation')
+        show_menu.add_command(label='Customers')
+        show_menu.add_command(label='Products')
+        show_menu.add_command(label='Account Payable')
+        show_menu.add_command(label='Register')
+        show_menu.add_command(label='Users')
+        show_menu.add_command(label='Statistics')
+        show_menu.add_separator()
+        show_menu.add_command(label='Hide Test')
+
+        # Help menu
+        help_menu = Menu(menubar, tearoff=0)
+        menubar.add_cascade(label='Help', menu=help_menu)
+        help_menu.add_command(label='1. Learn how to manage your POS')
+        help_menu.add_separator()
+        help_menu.add_command(label='2. Online Technical Suport')
+        help_menu.add_separator()
+        help_menu.add_command(label='3. Terms of service')
+        help_menu.add_separator()
+        help_menu.add_command(label='4. Update Techcified POS')
+        help_menu.add_separator()
+        help_menu.add_command(label='5. Renew your POS license')
+        help_menu.add_separator()
+        sub_help_menu = Menu(help_menu, tearoff=0)
+        help_menu.add_cascade(label='6. Account', menu=sub_help_menu)
+        sub_help_menu.add_command(label='Create a new account')
+
+        # Verify menu
+        verify_menu = Menu(menubar, tearoff=0)
+        menubar.add_cascade(label='Verify', menu=verify_menu)
+        verify_menu.add_command(label='License')
+        verify_menu.add_command(label='Verify License')
+
+
+        # Beside & Sign in frame
+        BSF = Frame(window, width=400, height=570, bg='white')
+        BSF.place(x=288, y=60)
+        SF = Frame(window, width=400, height=570, bg='white')
+        SF.place(x=690, y=60)
+
+        imgg = ImageTk.PhotoImage(Image.open("Images/secure.png"))
+        ImageLabel = Label(BSF, image=imgg)
+        ImageLabel.photo = imgg
+        ImageLabel.place(x=0, y=0)
+
+        img = ImageTk.PhotoImage(Image.open("Images/lpb.png"))
+        Login_Img = Label(SF, image=img)
+        Login_Img.photo = img
+        Login_Img.place(relx=0.5, y=55, anchor=N)
+        Login_Text = Label(SF, text='Hello Again!', font=('Arial', 18, 'bold'), fg='#D30E0E',bg='white')
+        Login_Text.place(relx=0.5, y=150, anchor=N)
+        Login_Text2 = Label(SF, text="Internet access is mind-free, we'll keep you safe.", font=('roboto', 9, 'bold'), bg='white')
+        Login_Text2.place(relx=0.5, y=200, anchor=N)
+
+        
+        User_Label = Label(SF, text='Username', font=('Arial', 13), bg='white')
+        User_Label.place(x=50, y=240)
+        User_Entry = Entry(SF, font=('Arial', 13), bd=2, bg='#E6E5E5', relief='groove')
+        User_Entry.place(relx=0.5, y=270, anchor=N, width=300, height=36)
+
+        Pass_Label = Label(SF, text='Password', font=('Arial', 13), bg='white')
+        Pass_Label.place(x=50, y=313)
+        Pass_Entry = Entry(SF, font=('roboto', 13), bd=2, bg='#E6E5E5', relief='groove')
+        Pass_Entry.place(relx=0.5, y=343, anchor=N, width=300, height=36)
+
+
+
+        # Buttons
+        ChkButton = Checkbutton(SF, text='Remember Me', cursor='hand2', bg='white')
+        ChkButton.place(x=100, y=390, anchor=N)
+
+        SigninButton = Button(SF, text='Sign in', font=('roboto', 10, 'bold'), bd=0, bg='#D30E0E', fg='white', cursor='hand2')
+        SigninButton.place(relx=0.5, y=440, anchor=N, width=300, height=36)
+
+        NA_Label = Label(SF, text="Don't have an account?", font=('roboto', 10, 'bold'), bg='white')
+        NA_Label.place(x=50, y=500)
+
+        NA_Button = Button(SF, text='Click here', font=('roboto', 10, 'bold'), bd=0, bg='white', fg='#D30E0E', cursor='hand2')
+        NA_Button.place(x=200, y=500)
+       
+
+
+       
+
+def dash():
+    window = Tk()
+    Dashboard(window)
+    window.mainloop()
+
+
+if __name__ == '__main__':
+    dash()
+
+
+
+

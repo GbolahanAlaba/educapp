@@ -1,0 +1,122 @@
+from tkinter import *
+from tkinter import messagebox
+from tkinter import Menu
+from PIL import ImageTk, Image
+
+
+
+class Dashboard:
+    def __init__(self, window):
+        self.window = window
+        self.window.wm_iconbitmap('Images/icon.ico')
+        self.window.title('EducAPP-360 | Signi Up')
+        sw = self.window.winfo_screenwidth()
+        sh = self.window.winfo_screenheight()
+        self.window.geometry(f'{sw}x{sh}')
+        # self.window.resizable(0,0)
+        self.window.state('zoomed')
+        self.window.configure(bg="lightgrey")
+
+
+        # Menu Bar
+        menubar = Menu(self.window)
+        self.window.config(menu=menubar)
+        # img = ImageTk.PhotoImage(Image.open("retail.ico"))
+
+
+        # Create menu
+        # File menu
+        file_menu = Menu(menubar, tearoff=0)
+        menubar.add_cascade(label='File', menu=file_menu)
+        file_menu.add_command(label='Print')
+        file_menu.add_command(label='Export')
+        file_menu.add_separator()
+
+        sub_file_menu = Menu(file_menu, tearoff=0)
+        file_menu.add_cascade(label='Layout', menu=sub_file_menu)
+        sub_file_menu.add_command(label='Add or remove columns')
+        sub_file_menu.add_command(label='Save')
+        sub_file_menu.add_separator()
+        sub_file_menu.add_command(label='Restore default layout')
+
+        file_menu.add_separator()
+        file_menu.add_command(label='Log Out')
+        file_menu.add_separator()
+        file_menu.add_command(label='Quit', command=self.window.destroy)
+
+        # Show menu
+        show_menu = Menu(menubar, tearoff=0)
+        menubar.add_cascade(label='Show', menu=show_menu)
+        show_menu.add_command(label='Sales')
+        show_menu.add_command(label='Quotation')
+        show_menu.add_command(label='Customers')
+        show_menu.add_command(label='Products')
+        show_menu.add_command(label='Account Payable')
+        show_menu.add_command(label='Register')
+        show_menu.add_command(label='Users')
+        show_menu.add_command(label='Statistics')
+        show_menu.add_separator()
+        show_menu.add_command(label='Hide Test')
+
+        # Help menu
+        help_menu = Menu(menubar, tearoff=0)
+        menubar.add_cascade(label='Help', menu=help_menu)
+        help_menu.add_command(label='1. Learn how to manage your POS')
+        help_menu.add_separator()
+        help_menu.add_command(label='2. Online Technical Suport')
+        help_menu.add_separator()
+        help_menu.add_command(label='3. Terms of service')
+        help_menu.add_separator()
+        help_menu.add_command(label='4. Update Techcified POS')
+        help_menu.add_separator()
+        help_menu.add_command(label='5. Renew your POS license')
+        help_menu.add_separator()
+        sub_help_menu = Menu(help_menu, tearoff=0)
+        help_menu.add_cascade(label='6. Account', menu=sub_help_menu)
+        sub_help_menu.add_command(label='Create a new account')
+
+        #frame
+        MF = Frame(window, width=950, height=500, bg='#e5dcda')
+        MF.place(relx=0.5, y=120, anchor=N)
+
+        ADP = Button(MF, text='Admission\nPortal', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        ADP.place(x=45, y=30, width=200, height=200,)
+
+        SP = Button(MF, text='Student\nPortal', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        SP.place(x=265, y=30, width=200, height=200,)
+
+        TP = Button(MF, text='Teachers\nPortal', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        TP.place(x=485, y=30, width=200, height=200,)
+
+        PP = Button(MF, text='Payment\nPortal', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        PP.place(x=705, y=30, width=200, height=200,)
+
+        MR = Button(MF, text='Medical\nStatement', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        MR.place(x=45, y=260, width=200, height=200,)
+
+        SC = Button(MF, text='School\nCalendar', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        SC.place(x=265, y=260, width=200, height=200,)
+
+        RC = Button(MF, text='Report\nCard', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        RC.place(x=485, y=260, width=200, height=200,)
+
+        EC = Button(MF, text='Extra\nCurriculum', font=('roboto', 25, 'bold'), bd=0, bg='white', cursor='hand2')
+        EC.place(x=705, y=260, width=200, height=200,)
+        
+        
+
+
+       
+
+def dash():
+    window = Tk()
+    Dashboard(window)
+    window.mainloop()
+
+
+if __name__ == '__main__':
+    dash()
+
+
+
+
